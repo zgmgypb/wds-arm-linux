@@ -1,0 +1,14 @@
+A := $C
+B = $C
+C = 123
+D ?= zheng
+
+files := a b c d
+files_o = $(foreach file, $(files), $(file).o)
+
+target:
+	@echo A = $A # A = 
+	@echo B = $B # B = 123
+	@echo C = $C # C = 123
+	@echo D = $D # D = 看是否第一次定义
+	@echo files_o = $(files_o)
